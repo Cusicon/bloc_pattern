@@ -14,17 +14,17 @@ class Todo extends Equatable {
     isCompleted,
     isCancelled,
   }) {
-    isCompleted = isCompleted ?? false;
-    isCancelled = isCancelled ?? false;
+    this.isCompleted = isCompleted ?? false;
+    this.isCancelled = isCancelled ?? false;
   }
 
-  Todo copyWith(
+  Todo copyWith({
     String? id,
     String? task,
     String? description,
     bool? isCompleted,
     bool? isCancelled,
-  ) {
+  }) {
     return Todo(
         id: id ?? this.id,
         task: task ?? this.task,
@@ -34,16 +34,5 @@ class Todo extends Equatable {
   }
 
   @override
-  List<Object?> get props => [
-        id,
-        task,
-        description,
-        isCompleted,
-        isCancelled,
-      ];
-
-  static List<Todo> todos = [
-    Todo(id: 'id_1', task: 'task 1', description: 'description 1'),
-    Todo(id: 'id_2', task: 'task 2', description: 'description 2'),
-  ];
+  List<Object?> get props => [id, task, description, isCompleted, isCancelled];
 }
